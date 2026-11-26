@@ -1,0 +1,40 @@
+
+running 20 tests
+test tests::equality_with_deadline_is_expired ... ok
+test tests::approvals_and_candidates_recheck_expiry ... ok
+test tests::closing_gate_revokes_pending_and_late_results ... ok
+test tests::approving_one_response_does_not_approve_another_or_escalate_tools ... ok
+test tests::approval_cannot_cross_gate_or_replay ... ok
+test tests::deadline_is_checked_after_work ... ok
+test tests::errors_and_decisions_do_not_echo_quarantined_content ... ok
+test tests::cap_counts_bytes_and_accepts_exact_boundary ... ok
+test tests::cancel_and_expire_revoke_tokens_without_recycling_ids ... ok
+test tests::grammar_rejects_trailing_instructions_and_noncanonical_data ... ok
+test tests::human_can_approve_after_screen_deadline_but_before_approval_expiry ... ok
+test tests::invalid_encoding_is_not_replaced_and_released ... ok
+test tests::no_keyword_match_is_not_a_pass ... ok
+test tests::independent_screen_budget_rejects_before_far_away_turn_deadline ... ok
+test tests::per_gate_state_is_bounded ... ok
+test tests::policy_is_fail_closed ... ok
+test tests::response_cannot_select_its_own_codec ... ok
+test tests::response_id_cannot_be_replaced_even_after_error ... ok
+test tests::strict_data_is_sanitized_and_single_use ... ok
+test tests::unknown_write_and_unapproved_read_only_tools_are_rejected ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling eigin-offline-gate-demo v0.1.0 (<checkout>/experiment)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.26s
+     Running unittests src/lib.rs (target/debug/deps/eigin_offline_gate_demo-0c22dc995d5193a2)
+     Running unittests src/main.rs (target/debug/deps/eigin_offline_gate_demo-9047a16b921f6463)
+   Doc-tests eigin_offline_gate_demo

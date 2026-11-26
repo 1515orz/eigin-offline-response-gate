@@ -1,0 +1,197 @@
+{
+  "verified_at": "2026-11-26T12:45:23+08:00",
+  "scope": "synthetic experiment; no model connected; no attacker instructions executed",
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "os_release": "25.5.0",
+    "macos": "26.5.2",
+    "cpu": "UNKNOWN",
+    "memory_bytes": "UNKNOWN",
+    "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)"
+  },
+  "binary_bytes": 369600,
+  "binary_sha256": "2d55c132f58988776018e7172a59dd7c13a4bfd8c48e3a33d101ca57d3a78097",
+  "unit_tests": {
+    "passed": 20,
+    "failed": 0,
+    "evidence": "unit-tests.txt"
+  },
+  "cli_checks": [
+    {
+      "name": "keyword_miss_does_not_pass",
+      "passed": true,
+      "output": {
+        "status": "REQUIRE_APPROVAL",
+        "response_id": 1,
+        "unsafe_baseline": "NoKeywordHit",
+        "released": false
+      }
+    },
+    {
+      "name": "keyword_hit_does_not_echo",
+      "passed": true,
+      "output": {
+        "status": "REQUIRE_APPROVAL",
+        "response_id": 1,
+        "unsafe_baseline": "KeywordHit",
+        "released": false
+      }
+    },
+    {
+      "name": "utf8_is_not_lossily_decoded",
+      "passed": true,
+      "output": {
+        "status": "ERROR_FALLBACK",
+        "reason": "InvalidUtf8",
+        "released": false
+      }
+    },
+    {
+      "name": "oversize",
+      "passed": true,
+      "output": {
+        "status": "ERROR_FALLBACK",
+        "reason": "Oversize",
+        "released": false
+      }
+    },
+    {
+      "name": "exact_cap",
+      "passed": true,
+      "output": {
+        "status": "REQUIRE_APPROVAL",
+        "response_id": 1,
+        "unsafe_baseline": "NoKeywordHit",
+        "released": false
+      }
+    },
+    {
+      "name": "data_cannot_choose_codec",
+      "passed": true,
+      "output": {
+        "status": "REQUIRE_APPROVAL",
+        "response_id": 1,
+        "unsafe_baseline": "NoKeywordHit",
+        "released": false
+      }
+    },
+    {
+      "name": "trusted_codec_candidate_only",
+      "passed": true,
+      "output": {
+        "status": "PASS_CANDIDATE",
+        "response_id": 1,
+        "value": 42,
+        "released": false
+      }
+    },
+    {
+      "name": "trailing_payload_rejected",
+      "passed": true,
+      "output": {
+        "status": "REQUIRE_APPROVAL",
+        "response_id": 1,
+        "unsafe_baseline": "NoKeywordHit",
+        "released": false
+      }
+    },
+    {
+      "name": "unknown_write_tool",
+      "passed": true,
+      "output": {
+        "status": "ERROR_FALLBACK",
+        "reason": "UnknownTool",
+        "released": false
+      }
+    },
+    {
+      "name": "unapproved_read_only_tool",
+      "passed": true,
+      "output": {
+        "status": "ERROR_FALLBACK",
+        "reason": "UnauthorizedTool",
+        "released": false
+      }
+    },
+    {
+      "name": "stalled_stdin_transport_timeout",
+      "passed": true,
+      "elapsed_ns": 39462917,
+      "output": {
+        "status": "ERROR_FALLBACK",
+        "reason": "Expired",
+        "released": false
+      }
+    }
+  ],
+  "fixture_summary": "SUMMARY total=20 baseline_tp=3 baseline_fn=11 baseline_fp=3 baseline_tn=3 natural_language_releases=0",
+  "hot_screen": {
+    "kind": "in_process_screen",
+    "iterations": 10000,
+    "warmups": 100,
+    "input_bytes": 1032,
+    "p50_ns": 833,
+    "p95_ns": 917,
+    "max_ns": 17000,
+    "includes_new_gate_and_policy_clone": true
+  },
+  "process_launch": {
+    "iterations": 30,
+    "input_bytes": 1032,
+    "first_measured_ns": 2700458,
+    "p50_ns": 2101584,
+    "p95_ns": 2700458,
+    "max_ns": 2739167,
+    "samples_ns": [
+      2700458,
+      2739167,
+      2223584,
+      2124042,
+      2326333,
+      2431792,
+      1926042,
+      1831042,
+      2119292,
+      2411917,
+      2101584,
+      1882417,
+      2054709,
+      2371042,
+      1894458,
+      1717208,
+      2148708,
+      2286042,
+      1781333,
+      1694750,
+      1952750,
+      2234917,
+      1880292,
+      1686000,
+      1669292,
+      2190000,
+      2143875,
+      1695583,
+      1673542,
+      1963292
+    ],
+    "definition": "fresh process each time; includes OS spawn, pipe read, reader thread, screening and exit; filesystem caches not flushed, NOT hardware cold boot"
+  },
+  "limits": [
+    "macOS arm64 only; no iPhone/iOS measurement",
+    "background machine load uncontrolled",
+    "synthetic hand-authored adversarial fixtures, not representative accuracy data",
+    "keyword baseline intentionally unsafe; natural-language auto-pass coverage is zero",
+    "screen budget detects overruns before result publication, not a hard real-time preemption guarantee"
+  ],
+  "source_sha256": {
+    "Cargo.toml": "987333b9f35c2b66062717c37de7f735707808f5e7c43993271ee02c8575c239",
+    "Cargo.lock": "c8126dd4c516e0a071d50533c2eb2d4c77909c0437cca564ac6766a2eebe1875",
+    "LICENSE": "a5a188780cd5f4263cb43dfa63d510bbe0e5f3081b9ee7e0d78df78617a3f503",
+    "src/lib.rs": "3ce0d959dba993f4754f8d9251fdd6099b874543c8e81b3346fc265401f5191e",
+    "src/main.rs": "fadab138c6fdcde645a1465ea5d0854486dcd220ae036ddab12485271c50266f",
+    "fixtures.tsv": "a68a69b3808f841e80068c3b811e7339d2da5eb4aebbfa9aa001f4a3db9f724e",
+    "verify.py": "d3bc592177d7ece148eacd97470464a0f744d725e9690909703418a48adad050"
+  }
+}

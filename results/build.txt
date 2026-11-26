@@ -1,0 +1,2 @@
+   Compiling eigin-offline-gate-demo v0.1.0 (<checkout>/experiment)
+    Finished `release` profile [optimized] target(s) in 2.16s
